@@ -1,10 +1,11 @@
 import React from 'react'
 import './App.css'
+import NavigationComponent from './components/NavigationComponent/NavigationComponent'
 
 const App = () => {
   return (
     <React.Fragment>
-        TruDrive
+        <NavigationComponent />
     </React.Fragment>
   )
 }
