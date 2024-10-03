@@ -37,21 +37,7 @@ const HomeComponent = () => {
                             const style = defaultStyles[extension] || {}
 
                             return (
-                                // <tr 
-                                //     key={index}
-                                //     className="relative mx-2 border-t h-14 cursor-pointer hover:bg-[#f5f5f5] group"
-                                // >
-                                //     <td className="w-[60%] max-w-[300px] px-4 py-2 mt-2 truncate whitespace-nowrap overflow-hidden text-ellipsis">
-                                //         {file.name}
-                                //     </td>
-                                //     <td className="w-[20%] max-w-[100px] p-2 truncate whitespace-nowrap overflow-hidden text-ellipsis">
-                                //         {file.opened}
-                                //     </td>
-                                //     <td className="w-[20%] max-w-[100px] p-2 truncate whitespace-nowrap overflow-hidden text-ellipsis">
-                                //         {file.owned}
-                                //     </td>
-                                // </tr> 
-                                <tr key={index} className="mx-2 border-t h-14 cursor-pointer hover:bg-[#f5f5f5] group">
+                                <tr key={index} className="mx-2 border-t h-14 cursor-pointer hover:bg-[#eae8e8] group">
                                     <td className="w-[60%] max-w-[300px] px-4 py-2 mt-2 truncate whitespace-nowrap overflow-hidden text-ellipsis relative">
                                         <div
                                             className="flex"
