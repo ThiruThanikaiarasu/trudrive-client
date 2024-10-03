@@ -72,11 +72,11 @@ const HomeComponent = () => {
                                             <div
                                                 className="options-container flex opacity-0 group-hover:opacity-100 transition-opacity duration-200 absolute right-0"
                                             >
-                                                <div className="p-2 rounded-md mr-2 hover:bg-[#e0e0e0]">
-                                                    <Ellipsis size={14} />
-                                                </div>
                                                 <div className='p-2 rounded-md mr-2 hover:bg-[#e0e0e0]'>
                                                     <Share2 size={14} />
+                                                </div>
+                                                <div className="p-2 rounded-md mr-2 hover:bg-[#e0e0e0]">
+                                                    <Ellipsis size={14} />
                                                 </div>
                                             </div>
                                         </div>
