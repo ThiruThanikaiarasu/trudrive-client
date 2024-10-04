@@ -4,6 +4,7 @@ import HomeComponent from '../components/HomeComponent/HomeComponent'
 import LoginComponent from '../pages/LoginComponent/LoginComponent'
 import SignupComponent from '../pages/SignupComponent/SignupComponent'
 import MyFileComponent from '../components/MyFileComponent/MyFileComponent'
+import ShareComponent from '../components/ShareComponent/ShareComponent'
 
 const AppRoutes = () => (
     <Routes>
@@ -11,6 +12,7 @@ const AppRoutes = () => (
         <Route path="/login" element={<LoginComponent />} />
         <Route path="/signup" element={<SignupComponent />} />
         <Route path="/my-file" element={<MyFileComponent />} />
+        <Route path="/shared" element={<ShareComponent />} />
     </Routes>
 )
 

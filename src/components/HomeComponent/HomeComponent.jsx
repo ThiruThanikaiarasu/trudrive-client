@@ -22,12 +22,12 @@ const HomeComponent = () => {
             <FilterComponent filter={filter} setFilter={setFilter} />
 
             <div className="bg-white shadow-md rounded-xl">
-                <table className="min-w-full table-auto border-collapse">
+                <table className="min-w-full table-auto border-collapse text-sm">
                     <thead>
-                        <tr className="bg-gray-100">
-                            <th className="w-[60%] max-w-[300px] px-4 py-2 text-left">Name</th>
-                            <th className="w-[20%] max-w-[100px] px-4 py-2 text-left">Opened</th>
-                            <th className="w-[20%] max-w-[100px] px-4 py-2 text-left">Owned</th>
+                        <tr>
+                            <th className="w-[60%] max-w-[300px] px-4 py-4 text-left font-semibold">Name</th>
+                            <th className="w-[20%] max-w-[100px] px-4 py-4 text-left font-semibold">Opened</th>
+                            <th className="w-[20%] max-w-[100px] px-4 py-4 text-left font-semibold">Owned</th>
                         </tr>
                     </thead>
                     <tbody>

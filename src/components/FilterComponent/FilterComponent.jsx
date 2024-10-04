@@ -14,7 +14,7 @@ const FilterComponent = ({ filter, setFilter }) => {
             {filterOptions.map((option) => (
                 <button
                     key={option.type}
-                    className={`flex items-center justify-center mr-2 py-1 px-4 border-gray-200 border-1 rounded-full ${
+                    className={`flex items-center justify-center mr-2 py-1 px-4 border-1 rounded-full ${
                         filter === option.label
                         ? 'bg-[#ebf3fc] border-2 border-blue-500 hover:bg-[#cfe4fa]'
                         : 'border-2 border-gray-400 hover:bg-[#ebebeb] hover:border-gray-500'
@@ -22,7 +22,7 @@ const FilterComponent = ({ filter, setFilter }) => {
                     onClick={() => setFilter(option.label)}
                 >
                     {option.type !== 'all' && (
-                        <div className="w-4 h-4 mr-2">
+                        <div className="w-4 h-4 mr-2 mb-1">
                             <FileIcon
                             extension={option.type}
                             {...defaultStyles[option.type]}
@@ -30,7 +30,9 @@ const FilterComponent = ({ filter, setFilter }) => {
                             />
                         </div>
                     )}
-                    <span>
+                    <span
+                        className="text-sm font-semibold"
+                    >
                         {option.label}
                     </span>
                 </button>
