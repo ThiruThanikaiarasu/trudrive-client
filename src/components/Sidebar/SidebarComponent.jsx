@@ -1,13 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Home, FolderClosed, Image, Users, Trash2, User, Plus } from 'lucide-react';
-import SidebarItem from './SidebarItem';
-import DropdownComponent from './DropdownComponent';
-import SidebarToggle from './SidebarToggle';
+import React, { useEffect, useRef, useState } from 'react'
+import { Home, FolderClosed, Image, Users, Trash2, User, Plus } from 'lucide-react'
+import SidebarItem from './SidebarItem'
+import DropdownComponent from './DropdownComponent'
+import SidebarToggle from './SidebarToggle'
 
 const SidebarComponent = ({ isSidebarOpen, setIsSidebarOpen }) => {
-    const [activeIcon, setActiveIcon] = useState('home');
-    const [newDropdownOpen, setNewDropdownOpen] = useState(false);
-    const newDropdownRef = useRef(null);
+    const [activeIcon, setActiveIcon] = useState('home')
+    const [newDropdownOpen, setNewDropdownOpen] = useState(false)
+    const newDropdownRef = useRef(null)
 
     const sidebarItems = [
         { to: '/', icon: Home, label: 'Home' },
@@ -16,31 +16,31 @@ const SidebarComponent = ({ isSidebarOpen, setIsSidebarOpen }) => {
         { to: '/shared', icon: Users, label: 'Shared' },
         { to: '/recycle-bin', icon: Trash2, label: 'Recycle Bin' },
         { to: '/people', icon: User, label: 'People' },
-    ];
+    ]
 
     const toggleSidebar = () => {
-        setIsSidebarOpen(!isSidebarOpen);
-    };
+        setIsSidebarOpen(!isSidebarOpen)
+    }
 
     const handleSetActiveIcon = (icon) => {
-        setActiveIcon(icon);
-    };
+        setActiveIcon(icon)
+    }
 
     const handleOpenModal = () => {
         // Modal open logic here
-    };
+    }
 
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (newDropdownRef.current && !newDropdownRef.current.contains(event.target)) {
-                setNewDropdownOpen(false);
+                setNewDropdownOpen(false)
             }
-        };
-        document.addEventListener('mousedown', handleClickOutside);
+        }
+        document.addEventListener('mousedown', handleClickOutside)
         return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, []);
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+    }, [])
 
     return (
         <div className={`flex h-screen fixed transition-all duration-300 ${isSidebarOpen ? 'w-60' : 'w-16'}`}>
@@ -83,7 +83,7 @@ const SidebarComponent = ({ isSidebarOpen, setIsSidebarOpen }) => {
                 </ul>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default SidebarComponent;
+export default SidebarComponent

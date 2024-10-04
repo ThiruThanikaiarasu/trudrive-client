@@ -1,5 +1,5 @@
-import React from 'react';
-import { MdOutlineCreateNewFolder, MdOutlineUploadFile, MdOutlineDriveFolderUpload } from 'react-icons/md';
+import React from 'react'
+import { MdOutlineCreateNewFolder, MdOutlineUploadFile, MdOutlineDriveFolderUpload } from 'react-icons/md'
 
 const DropdownComponent = ({ isSidebarOpen, handleOpenModal }) => {
     return (
@@ -25,7 +25,7 @@ const DropdownComponent = ({ isSidebarOpen, handleOpenModal }) => {
                 </li>
             </ul>
         </div>
-    );
-};
+    )
+}
 
-export default DropdownComponent;
+export default DropdownComponent

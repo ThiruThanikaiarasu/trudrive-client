@@ -4,9 +4,9 @@ import FilterComponent from '../FilterComponent/FilterComponent'
 import { FileIcon, defaultStyles } from 'react-file-icon'
 
 const ShareComponent = () => {
-    const [filter, setFilter] = useState('All')  // Set initial filter to 'All'
-    const [sortField, setSortField] = useState('name')  // Set initial sorting field
-    const [sortOrder, setSortOrder] = useState('asc')  // Set initial sorting order
+    const [filter, setFilter] = useState('All')  
+    const [sortField, setSortField] = useState('name') 
+    const [sortOrder, setSortOrder] = useState('asc')
 
     const sharedFiles = [
         { name: 'Project Proposal', type: 'Word', date: 'Jul 19', sharedBy: 'Alice' },
@@ -69,7 +69,7 @@ const ShareComponent = () => {
                     </thead>
                     <tbody>
                         {sortedFiles.map((file, index) => {
-                            const extension = file.type === 'PowerPoint' ? 'ppt' : file.type === 'Excel' ? 'xls' : 'docx';
+                            const extension = file.type === 'PowerPoint' ? 'ppt' : file.type === 'Excel' ? 'xls' : 'docx'
 
                             const style = defaultStyles[extension] || {}
                             

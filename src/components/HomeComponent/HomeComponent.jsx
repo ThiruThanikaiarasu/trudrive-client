@@ -32,7 +32,7 @@ const HomeComponent = () => {
                     </thead>
                     <tbody>
                         {filteredFiles.map((file, index) => {
-                            const extension = file.type === 'PowerPoint' ? 'ppt' : file.type === 'Excel' ? 'xls' : 'docx';
+                            const extension = file.type === 'PowerPoint' ? 'ppt' : file.type === 'Excel' ? 'xls' : 'docx'
 
                             const style = defaultStyles[extension] || {}
 

@@ -1,5 +1,5 @@
-import React from 'react';
-import { FileIcon, defaultStyles } from 'react-file-icon';
+import React from 'react'
+import { FileIcon, defaultStyles } from 'react-file-icon'
 
 const FilterComponent = ({ filter, setFilter }) => {
     const filterOptions = [
@@ -41,4 +41,4 @@ const FilterComponent = ({ filter, setFilter }) => {
     )
 }
 
-export default FilterComponent;
+export default FilterComponent

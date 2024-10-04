@@ -1,5 +1,5 @@
 export const fetchSearchResults = async (query) => {
-    // Assuming you have a search API endpoint
+    
     const response = await fetch(`/api/search?q=${query}`, {
         method: 'GET',
         headers: {
@@ -11,5 +11,5 @@ export const fetchSearchResults = async (query) => {
         throw new Error('Failed to fetch search results')
     }
 
-    return await response.json()  // Assuming the API returns JSON
+    return await response.json() 
 }

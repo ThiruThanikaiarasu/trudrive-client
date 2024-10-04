@@ -10,7 +10,7 @@ const SearchBarComponent = () => {
         if (searchQuery.trim() !== '') {
             try {
                 const results = await fetchSearchResults(searchQuery)
-                console.log(results)  // Handle results as needed
+                console.log(results)  
             } catch (error) {
                 console.error('Search failed:', error)
             }

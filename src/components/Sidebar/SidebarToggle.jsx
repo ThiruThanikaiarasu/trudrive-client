@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowLeftFromLine, ArrowRightFromLine } from 'lucide-react';
+import React from 'react'
+import { ArrowLeftFromLine, ArrowRightFromLine } from 'lucide-react'
 
 const SidebarToggle = ({ isSidebarOpen, toggleSidebar }) => {
     return (
@@ -15,7 +15,7 @@ const SidebarToggle = ({ isSidebarOpen, toggleSidebar }) => {
                 </button>
             </div>
         </li>
-    );
-};
+    )
+}
 
-export default SidebarToggle;
+export default SidebarToggle
