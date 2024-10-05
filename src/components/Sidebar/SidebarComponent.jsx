@@ -1,11 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Home, FolderClosed, Image, Users, Trash2, User, Plus } from 'lucide-react'
+import { Home, FolderClosed, Image, Users, Trash2, User, Plus, LocateIcon } from 'lucide-react'
 import SidebarItem from './SidebarItem'
 import DropdownComponent from './DropdownComponent'
 import SidebarToggle from './SidebarToggle'
+import { useLocation } from 'react-router-dom'
 
 const SidebarComponent = ({ isSidebarOpen, setIsSidebarOpen }) => {
-    const [activeIcon, setActiveIcon] = useState('home')
+    const location = useLocation()
+    const path = location.pathname == "/" ? 'home' : location.pathname.slice(1)
+    const [activeIcon, setActiveIcon] = useState(path)
     const [newDropdownOpen, setNewDropdownOpen] = useState(false)
     const newDropdownRef = useRef(null)
 

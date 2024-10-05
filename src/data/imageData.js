@@ -1,0 +1,168 @@
+import image1 from '../assets/img/scifi-shooter-game-1200.png'
+import image2 from '../assets/img/img2.jpg'
+import image3 from '../assets/img/img3.png'
+import image4 from '../assets/img/img4.png'
+import image5 from '../assets/img/img5.jpg'
+import image6 from '../assets/img/img6.jpg'
+
+const images = [
+    {
+      "_id": "76b2ec0a863384de69e3eeb3",
+      "urlId": "pjixs4huku9lidkvqf7b",
+      "owner": "66a4a6b4234af5460dc04c17",
+      "src": image1,
+      "width": "1200",
+      "height": "1200",
+      "originalname": "scifi-shooter-game-1200.png",
+      "mimetype": "image/png",
+      "size": 76021,
+      "parentDirectory": "66a4a6b5234af5460dc04c19",
+      "accessList": [],
+      "__v": 0,
+      "createdAt": "2024-08-07T03:37:46.240+00:00",
+      "updatedAt": "2024-08-07T03:37:46.240+00:00"
+    },
+    {
+      "_id": "76b2ec0a863384de69e3eef4",
+      "urlId": "fjs8s4hukd3lidkvqf7c",
+      "owner": "66a4a6b4234af5460dc04c18",
+      "src": image2,
+      "width": "1055",
+      "height": "1599",
+      "filename": "1523001864719_fantasy-landscape-1024.png",
+      "originalname": "fantasy-landscape-1024.png",
+      "mimetype": "image/png",
+      "size": 62345,
+      "parentDirectory": "66a4a6b5234af5460dc04c20",
+      "accessList": [],
+      "__v": 0,
+      "createdAt": "2024-08-07T03:40:46.240+00:00",
+      "updatedAt": "2024-08-07T03:40:46.240+00:00"
+    },
+    {
+      "_id": "76b2ec0a863384de69e3eef5",
+      "urlId": "ghtjs4hudu9lidkvqf7c",
+      "owner": "66a4a6b4234af5460dc04c19",
+      "src": image3,
+      "width": "1918",
+      "height": "930",
+      "filename": "1325001864719_mountain-sunset-1200.jpg",
+      "originalname": "mountain-sunset-1200.jpg",
+      "mimetype": "image/jpeg",
+      "size": 110532,
+      "parentDirectory": "66a4a6b5234af5460dc04c21",
+      "accessList": [],
+      "__v": 0,
+      "createdAt": "2024-08-07T03:45:46.240+00:00",
+      "updatedAt": "2024-08-07T03:45:46.240+00:00"
+    },
+    {
+      "_id": "66b2ec0a863384de69e3eef6",
+      "urlId": "kjf8s4hulr9lidkvqf7d",
+      "owner": "66a4a6b4234af5460dc04c20",
+      "src": image4,
+      "width": "1457",
+      "height": "698",
+      "filename": "1023001864719_city-night-skyline-800.jpg",
+      "originalname": "city-night-skyline-800.jpg",
+      "mimetype": "image/jpeg",
+      "size": 52312,
+      "parentDirectory": "66a4a6b5234af5460dc04c22",
+      "accessList": [],
+      "__v": 0,
+      "createdAt": "2024-08-03T03:50:46.240+00:00",
+      "updatedAt": "2024-08-07T03:50:46.240+00:00"
+    },
+    {
+      "_id": "66b2ec0a863384de69e3eef7",
+      "urlId": "htkjs4hulk9lidkvqf7e",
+      "owner": "66a4a6b4234af5460dc04c21",
+      "src": image5,
+      "width": "403",
+      "height": "577",
+      "filename": "1023001864719_sea-waves-1280.jpg",
+      "originalname": "sea-waves-1280.jpg",
+      "mimetype": "image/jpeg",
+      "size": 87644,
+      "parentDirectory": "66a4a6b5234af5460dc04c23",
+      "accessList": [],
+      "__v": 0,
+      "createdAt": "2024-08-02T03:55:46.240+00:00",
+      "updatedAt": "2024-08-07T03:55:46.240+00:00"
+    },
+    {
+      "_id": "66b2ec0a863384de69e3eef8",
+      "urlId": "dhj8s4hukm9lidkvqf7f",
+      "owner": "66a4a6b4234af5460dc04c22",
+      "src": image6,
+      "width": "393",
+      "height": "579",
+      "filename": "1923001864719_desert-dunes-1440.png",
+      "originalname": "desert-dunes-1440.png",
+      "mimetype": "image/png",
+      "size": 102438,
+      "parentDirectory": "66a4a6b5234af5460dc04c24",
+      "accessList": [],
+      "__v": 0,
+      "createdAt": "2024-08-01T04:00:46.240+00:00",
+      "updatedAt": "2024-08-07T04:00:46.240+00:00"
+    },
+    // {
+    //   "_id": "66b2ec0a863384de69e3eef9",
+    //   "urlId": "sfhjs4hubl9lidkvqf7g",
+    //   "owner": "66a4a6b4234af5460dc04c23",
+    //   "filename": "1123001864719_forest-stream-1080.jpg",
+    //   "originalname": "forest-stream-1080.jpg",
+    //   "mimetype": "image/jpeg",
+    //   "size": 67234,
+    //   "parentDirectory": "66a4a6b5234af5460dc04c25",
+    //   "accessList": [],
+    //   "__v": 0,
+    //   "createdAt": "2024-08-07T04:05:46.240+00:00",
+    //   "updatedAt": "2024-08-07T04:05:46.240+00:00"
+    // },
+    // {
+    //   "_id": "66b2ec0a863384de69e3eefa",
+    //   "urlId": "ujfjs4hubm9lidkvqf7h",
+    //   "owner": "66a4a6b4234af5460dc04c24",
+    //   "filename": "1223001864719_tropical-beach-1600.jpg",
+    //   "originalname": "tropical-beach-1600.jpg",
+    //   "mimetype": "image/jpeg",
+    //   "size": 94563,
+    //   "parentDirectory": "66a4a6b5234af5460dc04c26",
+    //   "accessList": [],
+    //   "__v": 0,
+    //   "createdAt": "2024-08-07T04:10:46.240+00:00",
+    //   "updatedAt": "2024-08-07T04:10:46.240+00:00"
+    // },
+    // {
+    //   "_id": "66b2ec0a863384de69e3eefb",
+    //   "urlId": "fjsks4hucm9lidkvqf7i",
+    //   "owner": "66a4a6b4234af5460dc04c25",
+    //   "filename": "1823001864719_waterfall-1400.jpg",
+    //   "originalname": "waterfall-1400.jpg",
+    //   "mimetype": "image/jpeg",
+    //   "size": 74312,
+    //   "parentDirectory": "66a4a6b5234af5460dc04c27",
+    //   "accessList": [],
+    //   "__v": 0,
+    //   "createdAt": "2024-08-07T04:15:46.240+00:00",
+    //   "updatedAt": "2024-08-07T04:15:46.240+00:00"
+    // },
+    // {
+    //   "_id": "66b2ec0a863384de69e3eefc",
+    //   "urlId": "sjfjs4hukq9lidkvqf7j",
+    //   "owner": "66a4a6b4234af5460dc04c26",
+    //   "filename": "1723001864719_sunset-lake-1200.png",
+    //   "originalname": "sunset-lake-1200.png",
+    //   "mimetype": "image/png",
+    //   "size": 88201,
+    //   "parentDirectory": "66a4a6b5234af5460dc04c28",
+    //   "accessList": [],
+    //   "__v": 0,
+    //   "createdAt": "2024-08-07T04:20:46.240+00:00",
+    //   "updatedAt": "2024-08-07T04:20:46.240+00:00"
+    // }
+  ]
+
+export default images
