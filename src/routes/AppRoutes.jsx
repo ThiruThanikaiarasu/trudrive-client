@@ -7,6 +7,7 @@ import MyFileComponent from '../components/MyFileComponent/MyFileComponent'
 import ShareComponent from '../components/ShareComponent/ShareComponent'
 import PhotosComponent from '../components/PhotosComponent/PhotosComponent'
 import ImageUploader from '../components/ImageUploader'
+import RecycleBinComponent from '../components/RecycleBinComponent/RecycleBinComponent'
 
 const AppRoutes = () => (
     <Routes>
@@ -17,6 +18,7 @@ const AppRoutes = () => (
         <Route path="/photos" element={<PhotosComponent />} />
         <Route path="/shared" element={<ShareComponent />} />
         <Route path="/upload" element={<ImageUploader />} />
+        <Route path="/recycle-bin" element={<RecycleBinComponent />} />
     </Routes>
 )
 
