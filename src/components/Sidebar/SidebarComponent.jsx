@@ -14,10 +14,10 @@ const SidebarComponent = ({ isSidebarOpen, setIsSidebarOpen }) => {
 
     const sidebarItems = [
         { to: '/', icon: Home, label: 'Home' },
-        { to: '/my-file', icon: FolderClosed, label: 'My Files' },
+        { to: '/my-file', icon: FolderClosed, label: 'my-file' },
         { to: '/photos', icon: Image, label: 'Photos' },
         { to: '/shared', icon: Users, label: 'Shared' },
-        { to: '/recycle-bin', icon: Trash2, label: 'Recycle Bin' },
+        { to: '/recycle-bin', icon: Trash2, label: 'recycle-bin' },
         { to: '/people', icon: User, label: 'People' },
     ]
 
@@ -26,7 +26,7 @@ const SidebarComponent = ({ isSidebarOpen, setIsSidebarOpen }) => {
     }
 
     const handleSetActiveIcon = (icon) => {
-        setActiveIcon(icon)
+        // setActiveIcon(icon)
     }
 
     const handleOpenModal = () => {
@@ -45,6 +45,11 @@ const SidebarComponent = ({ isSidebarOpen, setIsSidebarOpen }) => {
         }
     }, [])
 
+    useEffect(() => {
+        const path = location.pathname === '/' ? 'home' : location.pathname.slice(1)
+        setActiveIcon(path)
+    }, [location.pathname])
+
     return (
         <div className={`flex h-screen fixed transition-all duration-300 ${isSidebarOpen ? 'w-60' : 'w-16'}`}>
             <div className="flex-shrink-0 bg-[#f8faff]">
@@ -59,7 +64,7 @@ const SidebarComponent = ({ isSidebarOpen, setIsSidebarOpen }) => {
                         {isSidebarOpen && <span className="ml-2">New</span>}
                     </button>
                     {newDropdownOpen && (
-                        <div className={`absolute left-4 top-8 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-all ease-out duration-200 z-auto`}>
+                        <div className={`absolute left-4 top-8 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-all ease-out duration-200 z-50 overflow-visible`}>
                             <DropdownComponent handleOpenModal={handleOpenModal} />
                         </div>
                     )}

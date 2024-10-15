@@ -1,13 +1,13 @@
 import React from 'react'
 import './App.css'
-import NavigationComponent from './components/NavigationComponent/NavigationComponent'
 import { ImageProvider } from './context/ImageContext'
+import AppRoutes from './routes/AppRoutes'
 
 const App = () => {
   return (
     <React.Fragment>
         <ImageProvider>
-            <NavigationComponent />
+            <AppRoutes />
         </ImageProvider>
     </React.Fragment>
   )
