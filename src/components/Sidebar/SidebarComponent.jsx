@@ -8,9 +8,11 @@ import { useLocation } from 'react-router-dom'
 const SidebarComponent = ({ isSidebarOpen, setIsSidebarOpen }) => {
     const location = useLocation()
     const path = location.pathname == "/" ? 'home' : location.pathname.slice(1)
-    const [activeIcon, setActiveIcon] = useState(path)
-    const [newDropdownOpen, setNewDropdownOpen] = useState(false)
+    
     const newDropdownRef = useRef(null)
+
+    const [activeIcon, setActiveIcon] = useState(path)
+    const [newDropdownOpen, setNewDropdownOpen] = useState(false)    
 
     const sidebarItems = [
         { to: '/', icon: Home, label: 'Home', path: 'home' },
@@ -27,10 +29,6 @@ const SidebarComponent = ({ isSidebarOpen, setIsSidebarOpen }) => {
 
     const handleSetActiveIcon = (icon) => {
         // setActiveIcon(icon)
-    }
-
-    const handleOpenModal = () => {
-        // Modal open logic here
     }
 
     useEffect(() => {
@@ -65,7 +63,7 @@ const SidebarComponent = ({ isSidebarOpen, setIsSidebarOpen }) => {
                     </button>
                     {newDropdownOpen && (
                         <div className={`absolute left-4 top-8 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-all ease-out duration-200 z-50 overflow-visible`}>
-                            <DropdownComponent handleOpenModal={handleOpenModal} />
+                            <DropdownComponent />
                         </div>
                     )}
                 </div>

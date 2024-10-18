@@ -1,15 +1,22 @@
 import axios from 'axios'
 import React, { useRef, useState } from 'react'
 import { MdOutlineCreateNewFolder, MdOutlineUploadFile, MdOutlineDriveFolderUpload } from 'react-icons/md'
+import useModalContext from '../../hooks/useModalContext'
+import CreateFolderFormComponent from './CreateFolderFormComponent'
 
-const DropdownComponent = ({ isSidebarOpen, handleOpenModal }) => {
+const DropdownComponent = () => {
 
     const fileInputRef = useRef()
 
+    const { openModal } = useModalContext()
+
     const [uploadedFiles, setUploadedFiles] = useState()
 
+    const handleNewFolderClick = () => {
+        openModal(<CreateFolderFormComponent />)
+    }
+
     const handleNewFileUpload = () => {
-        // console.log(first)
         if (fileInputRef.current) {
             fileInputRef.current.click()
         }
@@ -50,7 +57,7 @@ const DropdownComponent = ({ isSidebarOpen, handleOpenModal }) => {
         console.log(formData) 
         axios.post('http://localhost:3500/api/v1/file/upload', formData, {
             headers: {
-                'Content-Type': 'multipart/form-data', // Explicitly setting it just in case
+                'Content-Type': 'multipart/form-data', 
             }
         })
             .then((response) => {
@@ -65,7 +72,7 @@ const DropdownComponent = ({ isSidebarOpen, handleOpenModal }) => {
         <div className="py-1">
             <ul>
                 <li>
-                    <button className="flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-[#e7e8eb]" onClick={handleOpenModal}>
+                    <button className="flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-[#e7e8eb]" onClick={handleNewFolderClick}>
                         <span className="text-xl mr-4"><MdOutlineCreateNewFolder /></span>
                         <p>New Folder</p>
                     </button>
