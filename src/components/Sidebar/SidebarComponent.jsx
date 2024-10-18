@@ -13,12 +13,12 @@ const SidebarComponent = ({ isSidebarOpen, setIsSidebarOpen }) => {
     const newDropdownRef = useRef(null)
 
     const sidebarItems = [
-        { to: '/', icon: Home, label: 'Home' },
-        { to: '/my-file', icon: FolderClosed, label: 'my-file' },
-        { to: '/photos', icon: Image, label: 'Photos' },
-        { to: '/shared', icon: Users, label: 'Shared' },
-        { to: '/recycle-bin', icon: Trash2, label: 'recycle-bin' },
-        { to: '/people', icon: User, label: 'People' },
+        { to: '/', icon: Home, label: 'Home', path: 'home' },
+        { to: '/my-file', icon: FolderClosed, label: 'My File', path: 'my-file' },
+        { to: '/photos', icon: Image, label: 'Photos', path: 'photos' },
+        { to: '/shared', icon: Users, label: 'Shared', path: 'shared' },
+        { to: '/recycle-bin', icon: Trash2, label: 'Recycle Bin', path: 'recycle-bin' },
+        { to: '/people', icon: User, label: 'People', path: 'people' },
     ]
 
     const toggleSidebar = () => {
@@ -83,7 +83,7 @@ const SidebarComponent = ({ isSidebarOpen, setIsSidebarOpen }) => {
                             to={item.to}
                             icon={item.icon}
                             label={item.label}
-                            isActive={activeIcon === item.label.toLowerCase()}
+                            isActive={activeIcon === item.path}
                             handleSetActiveIcon={handleSetActiveIcon}
                             isSidebarOpen={isSidebarOpen}
                         />
