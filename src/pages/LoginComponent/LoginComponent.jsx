@@ -8,6 +8,7 @@ import authService from '../../api/authService'
 import useUserContext from '../../hooks/useUserContext'
 import toast from 'react-hot-toast'
 import useForm from '../../hooks/useForm'
+import Button from '../../elements/Button'
 
 
 function LoginComponent() {
@@ -87,13 +88,13 @@ function LoginComponent() {
                         onChange={handleChange}
                         error={errors.password}
                     />
-                    <button
+                    <Button
                         type="submit"
                         className={`w-full py-3 px-4 bg-blue-600 text-white font-semibold rounded-md ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'}`}
                         disabled={isSubmitting}
                     >
                         {isSubmitting ? 'Logging in...' : 'Login'}
-                    </button>
+                    </Button>
                     <span className="block mt-4 text-center text-sm">
                         Don't have an account? <span className="text-blue-600 underline cursor-pointer">Create one!</span>
                     </span>

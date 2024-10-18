@@ -1,10 +1,11 @@
 import React from 'react'
+import Input from '../../elements/Input'
 
 function FormInputComponent({ label, type, name, placeholder, value, onChange, error }) {
     return (
         <div className="mb-6">
             <label className="block text-sm font-medium mb-2">{label}</label>
-            <input
+            <Input
                 type={type}
                 name={name}
                 placeholder={placeholder}

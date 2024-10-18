@@ -1,5 +1,6 @@
 import React from 'react'
 import { FileIcon, defaultStyles } from 'react-file-icon'
+import Button from '../../elements/Button'
 
 const FilterComponent = ({ filter, setFilter }) => {
     const filterOptions = [
@@ -12,7 +13,7 @@ const FilterComponent = ({ filter, setFilter }) => {
     return (
         <div className="flex justify-start mb-4 bg-[#f8faff]">
             {filterOptions.map((option) => (
-                <button
+                <Button
                     key={option.type}
                     className={`flex items-center justify-center mr-2 py-1 px-4 border-1 rounded-full ${
                         filter === option.label
@@ -35,7 +36,7 @@ const FilterComponent = ({ filter, setFilter }) => {
                     >
                         {option.label}
                     </span>
-                </button>
+                </Button>
             ))}
         </div>
     )

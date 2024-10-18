@@ -4,6 +4,7 @@ import SidebarItem from './SidebarItem'
 import DropdownComponent from './DropdownComponent'
 import SidebarToggle from './SidebarToggle'
 import { useLocation } from 'react-router-dom'
+import Button from '../../elements/Button'
 
 const SidebarComponent = ({ isSidebarOpen, setIsSidebarOpen }) => {
     const location = useLocation()
@@ -53,14 +54,14 @@ const SidebarComponent = ({ isSidebarOpen, setIsSidebarOpen }) => {
             <div className="flex-shrink-0 bg-[#f8faff]">
                 
                 <div className="flex justify-start items-center py-4 px-4 relative" ref={newDropdownRef}>
-                    <button
+                    <Button
                         className="shadow-xl bg-white text-black py-2 px-6 flex items-center rounded-xl"
                         style={{ boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" }}
                         onClick={() => setNewDropdownOpen(!newDropdownOpen)}
                     >
                         <span className="text-xl"><Plus /></span>
                         {isSidebarOpen && <span className="ml-2">New</span>}
-                    </button>
+                    </Button>
                     {newDropdownOpen && (
                         <div className={`absolute left-4 top-8 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-all ease-out duration-200 z-50 overflow-visible`}>
                             <DropdownComponent />

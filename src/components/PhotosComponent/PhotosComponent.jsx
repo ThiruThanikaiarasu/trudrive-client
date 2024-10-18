@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import useImageContext from "../../hooks/useImageContext"
 import ImageGallery from "./ImageGallery"
 import { ArrowDownToLine, CopyPlus, Share2, Trash2, X } from "lucide-react"
+import Button from "../../elements/Button"
 
 const PhotosComponent = () => {
     const { globalImages, totalSelectedCount, groupImagesByDate, clearAllSelections } = useImageContext()
@@ -103,7 +104,7 @@ const PhotosComponent = () => {
                                 <div
                                     className="ml-72"
                                 >
-                                    <button
+                                    <Button
                                         className=" flex items-center justify-center text-sm cursor-pointer border border-gray-400 px-3 py-2 rounded-full hover:bg-[#f0f0f0] hover:text-blue-600 hover:border-gray-700"
                                         onClick={clearAllSelections}
                                     >
@@ -111,7 +112,7 @@ const PhotosComponent = () => {
                                             <X size={20} strokeWidth={1}/>
                                         </span>
                                         {totalSelectedCount} Selected
-                                    </button>
+                                    </Button>
                                 </div>    
                             </div>
                 }

@@ -1,6 +1,7 @@
 import { X } from 'lucide-react'
 import React, { useState } from 'react'
 import useModalContext from '../../hooks/useModalContext'
+import Button from '../../elements/Button'
 
 const CreateFolderFormComponent = () => {
 
@@ -22,12 +23,12 @@ const CreateFolderFormComponent = () => {
         <div className=" p-2 rounded-lg w-96 relative">
             <h2 className="text-lg font-semibold mb-4">Create a folder</h2>
             
-            <button 
+            <Button 
                 className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
                 onClick={closeModal}
             >
                 <X />
-            </button>
+            </Button>
             
             <form onSubmit={handleSubmit} className="mt-10">
                 <div className="my-4">
@@ -40,13 +41,13 @@ const CreateFolderFormComponent = () => {
                     />
                 </div>
                 <div className="flex justify-end">
-                    <button 
+                    <Button 
                         type="submit" 
                         className={`text-md px-4 py-2 rounded text-white ${folderName ? 'bg-blue-500 hover:bg-blue-600' : 'bg-gray-300 cursor-not-allowed'}`}
                         disabled={!folderName}
                     >
                         Create
-                    </button>
+                    </Button>
                 </div>
             </form>
         </div>

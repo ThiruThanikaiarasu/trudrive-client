@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Gallery } from "react-grid-gallery"
 import useImageContext from "../../hooks/useImageContext"
+import Button from "../../elements/Button"
 
 const ImageGallery = ({ images }) => {
     const { updateGlobalImages, clearAllSelections } = useImageContext()
@@ -38,11 +39,11 @@ const ImageGallery = ({ images }) => {
     return (
         <div>
             <div className="pt-1 pb-1">
-                <button onClick={handleSelectAllClick}>
+                <Button onClick={handleSelectAllClick}>
                     {localImages.some((image) => image.isSelected)
                         ? `${localImages.filter((img) => img.isSelected).length} selected`
                         : "Select all"}
-                </button>
+                </Button>
             </div>
             <Gallery
                 images={localImages.map((image) => ({
