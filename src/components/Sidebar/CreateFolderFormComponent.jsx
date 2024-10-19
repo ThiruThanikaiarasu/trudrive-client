@@ -2,22 +2,39 @@ import { X } from 'lucide-react'
 import React, { useState } from 'react'
 import useModalContext from '../../hooks/useModalContext'
 import Button from '../../elements/Button'
+import driveService from '../../api/driveService'
+import toast from 'react-hot-toast'
 
-const CreateFolderFormComponent = () => {
+const CreateFolderFormComponent = ({ currentUrlId }) => {
 
     const { closeModal } = useModalContext()
 
-    const [folderName, setFolderName] = useState('');
+    const [folderName, setFolderName] = useState('')
 
     const handleInputChange = (e) => {
-        setFolderName(e.target.value);
-    };
+        setFolderName(e.target.value)
+    }
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle the folder creation logic here
-        console.log('Folder Created:', folderName);
-    };
+        closeModal()
+        e.preventDefault()
+        
+        driveService.createChildDirectory(currentUrlId, folderName)
+            .then((response) => {
+                if(response.status == 201) {
+                    toast.success(`${response.data.message}`)
+                }
+            })
+            .catch((error) => {
+                console.log(error)
+                if(error.response.status == 400) {
+                    toast.error(`${error.response.data.message}`)
+                }
+                if(error.response.status == 404) {
+                    toast.error(`${error.response.data.message}`)
+                }
+            })
+    }
 
     return (
         <div className=" p-2 rounded-lg w-96 relative">

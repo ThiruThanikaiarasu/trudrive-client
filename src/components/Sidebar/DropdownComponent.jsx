@@ -4,8 +4,12 @@ import { MdOutlineCreateNewFolder, MdOutlineUploadFile, MdOutlineDriveFolderUplo
 import useModalContext from '../../hooks/useModalContext'
 import CreateFolderFormComponent from './CreateFolderFormComponent'
 import Button from '../../elements/Button'
+import { useSearchParams } from 'react-router-dom'
 
 const DropdownComponent = () => {
+
+    const [ currentDirectory ] = useSearchParams()
+    const currentUrlId = currentDirectory.get('id')
 
     const fileInputRef = useRef()
 
@@ -14,7 +18,7 @@ const DropdownComponent = () => {
     const [uploadedFiles, setUploadedFiles] = useState()
 
     const handleNewFolderClick = () => {
-        openModal(<CreateFolderFormComponent />)
+        openModal(<CreateFolderFormComponent currentUrlId={currentUrlId}/>)
     }
 
     const handleNewFileUpload = () => {

@@ -1,9 +1,20 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import FileRowComponent from "./FileRowComponent"
 import useSortedFiles from "../../hooks/useSortedFiles"
 import { ArrowDown, ArrowUp, ChevronDown } from "lucide-react"
+import useUserContext from "../../hooks/useUserContext"
+import { useNavigate, useSearchParams } from "react-router-dom"
 
 const MyFileComponent = () => {
+
+    const { userProfile } = useUserContext()
+    const [searchParams, setSearchParams] = useSearchParams()
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        setSearchParams({ id: userProfile.rootUrlId })
+    },[userProfile, setSearchParams])
+
     const [sortField, setSortField] = useState('name') 
     const [sortOrder, setSortOrder] = useState('asc') 
 
