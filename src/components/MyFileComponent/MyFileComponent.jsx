@@ -4,6 +4,7 @@ import useSortedFiles from "../../hooks/useSortedFiles"
 import { ArrowDown, ArrowUp, ChevronDown } from "lucide-react"
 import useUserContext from "../../hooks/useUserContext"
 import { useNavigate, useSearchParams } from "react-router-dom"
+import driveService from "../../api/driveService"
 
 const MyFileComponent = () => {
 
@@ -14,6 +15,16 @@ const MyFileComponent = () => {
     useEffect(() => {
         setSearchParams({ id: userProfile.rootUrlId })
     },[userProfile, setSearchParams])
+
+    useEffect(() => {
+        driveService.fetchDirectoryById(searchParams.get('id'))
+            .then((response) => {
+                console.log(response)
+            })
+            .catch((error) => {
+                console.log(error?.response?.data)
+            })
+    }, [])
 
     const [sortField, setSortField] = useState('name') 
     const [sortOrder, setSortOrder] = useState('asc') 

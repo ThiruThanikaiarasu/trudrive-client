@@ -6,6 +6,12 @@ const driveService = {
         const response = await axiosInstance.post(`/folders/${urlId}`, {directoryName})
 
         return response
+    },
+
+    fetchDirectoryById: async ( rootUrlId ) => {
+        const response = await axiosInstance.get(`/folders/${rootUrlId}`)
+
+        return response
     }
 
 }

@@ -38,8 +38,7 @@ const DropdownComponent = () => {
                 img.src = e.target.result
 
                 img.onload = () => {
-                    // Create a new object containing file details and image dimensions
-                    extendedFileData = {
+                        extendedFileData = {
                         name: file.name,
                         size: file.size,
                         type: file.type,
