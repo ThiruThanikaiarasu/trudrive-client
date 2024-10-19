@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import scattered_files from '../../../src/assets/img/login-hero-image.jpg'
 
@@ -27,12 +27,7 @@ function LoginComponent() {
                     if(response.status == 200) {
                         console.log(response.data)
                         setIsUserLoggedIn(true)
-                        setUserProfile(response.data.data[0])
-                        // localStorage.setItem(
-                        //     'userProfile',
-                        //     JSON.stringify(response.data.data[0])
-                        // )
-                        // localStorage.setItem('isUserLoggedIn', 'true')
+                        setUserProfile(response.data.data)
                         
                         navigate('/')
                         toast.success('Logged In Successfully')
@@ -96,7 +91,7 @@ function LoginComponent() {
                         {isSubmitting ? 'Logging in...' : 'Login'}
                     </Button>
                     <span className="block mt-4 text-center text-sm">
-                        Don't have an account? <span className="text-blue-600 underline cursor-pointer">Create one!</span>
+                        Don't have an account? <Link to="/signup"><span className="text-blue-600 underline cursor-pointer">Create one!</span></Link>
                     </span>
                 </form>
             </div>

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { validateLoginForm} from '../utils/formValidation'
+import { validateLoginForm, validateSignupForm } from '../utils/formValidation'
 
 const useForm = (initialState, onSubmit, formType) => {
 
@@ -20,9 +20,9 @@ const useForm = (initialState, onSubmit, formType) => {
         if( formType == 'login') {
             validationErrors = validateLoginForm(formData)
         } 
-        // else {
-        //     validationErrors = validateSignupForm(formData)
-        // }
+        else {
+            validationErrors = validateSignupForm(formData)
+        }
         if (Object.keys(validationErrors).length === 0) {
             onSubmit(formData)
         } else {
