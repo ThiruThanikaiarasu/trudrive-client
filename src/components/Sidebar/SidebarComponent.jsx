@@ -64,7 +64,7 @@ const SidebarComponent = ({ isSidebarOpen, setIsSidebarOpen }) => {
                     </Button>
                     {newDropdownOpen && (
                         <div className={`absolute left-4 top-8 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-all ease-out duration-200 z-50 overflow-visible`}>
-                            <DropdownComponent />
+                            <DropdownComponent setNewDropdownOpen={setNewDropdownOpen}/>
                         </div>
                     )}
                 </div>
