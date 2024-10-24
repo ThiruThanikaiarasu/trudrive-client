@@ -40,16 +40,18 @@ const FileUploadComponent = ({ currentUrlId, setNewDropdownOpen }) => {
             setPercentage(totalPercentage)
         }
 
-        driveService.uploadFileToDirectory(currentUrlId, formData, updateProgress)
+        const endpoint = currentUrlId ? driveService.uploadFileToSpecificDirectory(currentUrlId, formData, updateProgress) : driveService.uploadDirectoryToRootDirectory(formData, updateProgress)
+
+        endpoint
             .then((response) => {
                 if(response.status == 201) {
                     toast.success('File uploaded successfully')
                     setTimeout(() => {
-                        setIsProgressModalExiting(true); // Start exit animation
+                        setIsProgressModalExiting(true); 
                         setTimeout(() => {
-                          onClose(); // Close the modal after animation ends
-                          setIsProgressModalExiting(false); // Reset for next time
-                        }, 500); // Duration matches the CSS transition time
+                          onClose(); 
+                          setIsProgressModalExiting(false); 
+                        }, 500); 
                     }, 8000);
                 }
             }) 

@@ -34,13 +34,21 @@ function LoginComponent() {
                     }
                 })
                 .catch((error) => {
-                    if (error.response.status === 401) {
+                    if (!error.response) {
+                        toast.error('No internet connection. Please check your network.');
+                    } else if (error.response.status === 400) {
+                        toast.error(`Bad Request: ${error.response.data.message}`);
+                    } else if (error.response.status === 401) {
                         if (error.response.data.error === 'invalid_password') {
                             setErrors({ password: 'Invalid password' })
                         } else if (error.response.data.error === 'invalid_email') {
                             setErrors({ email: 'Invalid email address' })
                         }
                         toast.error(`${error.response.data.message}`)
+                    } else if (error.response.status === 500) {
+                        toast.error('Server error. Please try again later.');
+                    } else {
+                        toast.error('Something went wrong. Please try again.');
                     }
                 })
                 .finally(() => {

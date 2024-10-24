@@ -19,14 +19,15 @@ const CreateFolderFormComponent = ({ currentUrlId }) => {
         closeModal()
         e.preventDefault()
         
-        driveService.createChildDirectory(currentUrlId, folderName)
+        const endpoint = currentUrlId ? driveService.createChildDirectory(currentUrlId, folderName) : driveService.createRootDirectory(folderName)
+
+        endpoint
             .then((response) => {
                 if(response.status == 201) {
                     toast.success(`${response.data.message}`)
                 }
             })
             .catch((error) => {
-                console.log(error)
                 if(error.response.status == 400) {
                     toast.error(`${error.response.data.message}`)
                 }

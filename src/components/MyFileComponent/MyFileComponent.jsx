@@ -2,22 +2,12 @@ import { useEffect, useState } from "react"
 import FileRowComponent from "./FileRowComponent"
 import useSortedFiles from "../../hooks/useSortedFiles"
 import { ArrowDown, ArrowUp, ChevronDown } from "lucide-react"
-import useUserContext from "../../hooks/useUserContext"
-import { useNavigate, useSearchParams } from "react-router-dom"
 import driveService from "../../api/driveService"
 
 const MyFileComponent = () => {
 
-    const { userProfile } = useUserContext()
-    const [searchParams, setSearchParams] = useSearchParams()
-    const navigate = useNavigate()
-
     useEffect(() => {
-        setSearchParams({ id: userProfile.rootUrlId })
-    },[userProfile, setSearchParams])
-
-    useEffect(() => {
-        driveService.fetchDirectoryById(searchParams.get('id'))
+        driveService.fetchRootDirectory()
             .then((response) => {
                 console.log(response)
             })
