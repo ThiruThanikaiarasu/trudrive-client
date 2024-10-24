@@ -1,5 +1,5 @@
-import React from 'react'
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 import HomeComponent from '../components/HomeComponent/HomeComponent'
 import LoginComponent from '../pages/LoginComponent/LoginComponent'
 import SignupComponent from '../pages/SignupComponent/SignupComponent'
@@ -10,6 +10,7 @@ import ImageUploader from '../components/ImageUploader'
 import RecycleBinComponent from '../components/RecycleBinComponent/RecycleBinComponent'
 import MainLayout from '../layouts/MainLayout'
 import AuthLayout from '../layouts/AuthLayout'
+
 
 const AppRoutes = () => (
     <Router>

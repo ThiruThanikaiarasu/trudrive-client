@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Home, FolderClosed, Image, Users, Trash2, User, Plus, LocateIcon } from 'lucide-react'
+import { useLocation } from 'react-router-dom'
+import { Home, FolderClosed, Image, Users, Trash2, User, Plus } from 'lucide-react'
+
 import SidebarItem from './SidebarItem'
 import DropdownComponent from './DropdownComponent'
 import SidebarToggle from './SidebarToggle'
-import { useLocation } from 'react-router-dom'
 import Button from '../../elements/Button'
+
 
 const SidebarComponent = ({ isSidebarOpen, setIsSidebarOpen }) => {
     const location = useLocation()
@@ -59,7 +61,9 @@ const SidebarComponent = ({ isSidebarOpen, setIsSidebarOpen }) => {
                         style={{ boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" }}
                         onClick={() => setNewDropdownOpen(!newDropdownOpen)}
                     >
-                        <span className="text-xl"><Plus /></span>
+                        <span className="text-xl">
+                            <Plus />
+                        </span>
                         {isSidebarOpen && <span className="ml-2">New</span>}
                     </Button>
                     {newDropdownOpen && (

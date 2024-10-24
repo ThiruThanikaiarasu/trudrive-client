@@ -1,12 +1,16 @@
-import React from 'react'
-import { MdOutlineCreateNewFolder, MdOutlineDriveFolderUpload } from 'react-icons/md'
-import useModalContext from '../../hooks/useModalContext'
-import CreateFolderFormComponent from './CreateFolderFormComponent'
-import Button from '../../elements/Button'
+import { useRef } from "react";
 import { useSearchParams } from 'react-router-dom'
-import FileUploadComponent from './FileUploadComponent'
+import { FileUp, FolderUp, FolderPlus } from 'lucide-react'
+
+import useModalContext from '../../hooks/useModalContext'
+import CreateFolderFormComponent from '../Forms/CreateFolderFormComponent'
+import FileUploadComponent from '../Upload/FileUploadComponent'
+import DropdownItem from './DropdownItems'
+
 
 const DropdownComponent = ({ setNewDropdownOpen }) => {
+
+    const fileInputRef = useRef()
 
     const [ currentDirectory ] = useSearchParams()
     const currentUrlId = currentDirectory.get('id')
@@ -18,24 +22,44 @@ const DropdownComponent = ({ setNewDropdownOpen }) => {
         openModal(<CreateFolderFormComponent currentUrlId={currentUrlId}/>)
     }
 
+    const handleNewFileUpload = () => {
+        if (fileInputRef.current) {
+            fileInputRef.current.click()
+        }
+    }
+
+    const handleNewFolderUpload = () => {
+
+    }
+
     return (
         <div className="py-1">
             <ul>
-                <li>
-                    <Button className="flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-[#e7e8eb]" onClick={handleNewFolderClick}>
-                        <span className="text-xl mr-4"><MdOutlineCreateNewFolder /></span>
-                        <p>New Folder</p>
-                    </Button>
-                </li>
-                <li>
-                    <FileUploadComponent currentUrlId={currentUrlId} setNewDropdownOpen={setNewDropdownOpen}/>
-                </li>
-                <li>
-                    <Button className="flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-[#e7e8eb]">
-                        <span className="text-xl mr-4"><MdOutlineDriveFolderUpload /></span>
-                        <p>Upload Folder</p>
-                    </Button>
-                </li>
+                
+                <DropdownItem
+                    onClick={handleNewFolderClick}
+                    icon={<FolderPlus size={20}/>}
+                    title="New Folder"
+                />
+
+                <DropdownItem
+                    onClick={handleNewFileUpload}
+                    icon={<FileUp size={20}/>}
+                    title="New File"
+                >
+                    <FileUploadComponent 
+                        currentUrlId={currentUrlId}
+                        setNewDropdownOpen={setNewDropdownOpen}
+                        fileInputRef={fileInputRef}
+                    />
+                </DropdownItem>
+
+                <DropdownItem
+                    onClick={handleNewFolderUpload}
+                    icon={<FolderUp size={20}/>}
+                    title="Upload Folder"
+                />
+
             </ul>
         </div>
     )

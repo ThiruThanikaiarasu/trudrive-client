@@ -1,24 +1,16 @@
-import React, { useRef, useState } from 'react'
-import driveService from '../../api/driveService'
+import React, { useState } from 'react'
 import toast from 'react-hot-toast'
-import UploadProgressModal from './UploadProgessModal'
-import Button from '../../elements/Button'
-import { MdOutlineUploadFile } from 'react-icons/md'
 
-const FileUploadComponent = ({ currentUrlId, setNewDropdownOpen }) => {
+import driveService from '../../api/driveService'
+import UploadProgressModal from './UploadProgressModal'
 
-    const fileInputRef = useRef()
+
+const FileUploadComponent = ({ currentUrlId, setNewDropdownOpen, fileInputRef }) => {
 
     const [isModalVisible, setIsModalVisible] = useState(false)
     const [totalFiles, setTotalFiles] = useState(0)
     const [percentage, setPercentage] = useState(0)
     const [isProgressModalExiting, setIsProgressModalExiting] = useState(false)
-
-    const handleNewFileUpload = () => {
-        if (fileInputRef.current) {
-            fileInputRef.current.click()
-        }
-    }
     
     const handleFileChange = (event) => {
         // setNewDropdownOpen(false)
@@ -72,7 +64,7 @@ const FileUploadComponent = ({ currentUrlId, setNewDropdownOpen }) => {
     }
 
     return (
-        <div>
+        <React.Fragment>
             <input 
                 type="file" 
                 ref={fileInputRef} 
@@ -80,13 +72,6 @@ const FileUploadComponent = ({ currentUrlId, setNewDropdownOpen }) => {
                 onChange={handleFileChange}
                 multiple
             />
-            <Button
-                className="flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-[#e7e8eb]"
-                onClick={handleNewFileUpload}
-            >
-                <span className="text-xl mr-4"><MdOutlineUploadFile /></span>
-                <p>New File</p>
-            </Button>
 
             <UploadProgressModal 
                 isVisible={isModalVisible}
@@ -95,7 +80,7 @@ const FileUploadComponent = ({ currentUrlId, setNewDropdownOpen }) => {
                 onClose={() => setIsModalVisible(false)}
                 isProgressModalExiting={isProgressModalExiting}
             />
-        </div>
+        </React.Fragment>
     )
 }
 

@@ -32,9 +32,16 @@ function SignupComponent() {
                     }
                 })
                 .catch((error) => {
-                    if (error.response.status === 409) {
+                    if (!error.response) {
+                        toast.error('No internet connection. Please check your network.');
+                    } else if (error.response.status === 409) {
                         setErrors({ email: 'Existing email' })
+                       
                         toast.error(`${error.response.data.message}`)
+                    } else if (error.response.status === 500) {
+                        toast.error('Server error. Please try again later.');
+                    } else {
+                        toast.error('Something went wrong. Please try again.');
                     }
                 })
                 .finally(() => {

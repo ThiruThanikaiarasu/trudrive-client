@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 import scattered_files from '../../../src/assets/img/login-hero-image.jpg'
@@ -19,8 +19,8 @@ function LoginComponent() {
 
     const [isSubmitting, setIsSubmitting] = useState(false)
 
-    const onSubmit = async (e) => {
-
+    const onSubmit = (event) => {
+            event.preventDefault()
             setIsSubmitting(true)
             authService.login(formData)
                 .then((response) => {

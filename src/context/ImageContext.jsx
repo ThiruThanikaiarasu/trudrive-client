@@ -1,5 +1,7 @@
 import { createContext, useState } from "react"
+
 import imagesList from "../data/imageData"
+
 
 const ImageContext = createContext({})
 
