@@ -2,7 +2,7 @@ const validateEmail = (email, errors) => {
     if (!email) {
         errors.email = 'Email is required'
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-        errors.email = 'Email address is invalid'
+        errors.email = 'Enter a valid Email address'
     }
 }
 
@@ -48,4 +48,12 @@ const validateSignupForm = ({ firstName, lastName, email, password }) => {
     return errors
 }
 
-export { validateLoginForm, validateSignupForm }
+const validateSignupEmail = ({email}) => {
+    let errors = {}
+
+    validateEmail(email, errors)
+
+    return errors
+}
+
+export { validateLoginForm, validateSignupForm, validateSignupEmail }

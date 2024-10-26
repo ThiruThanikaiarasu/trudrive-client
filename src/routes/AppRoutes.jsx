@@ -2,7 +2,7 @@ import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import HomeComponent from '../components/HomeComponent/HomeComponent'
 import LoginComponent from '../pages/LoginComponent/LoginComponent'
-import SignupComponent from '../pages/SignupComponent/SignupComponent'
+import SignupEmailCaptureStep from '../pages/SignupComponent/SignupEmailCaptureStep'
 import MyFileComponent from '../components/MyFileComponent/MyFileComponent'
 import ShareComponent from '../components/ShareComponent/ShareComponent'
 import PhotosComponent from '../components/PhotosComponent/PhotosComponent'
@@ -26,7 +26,7 @@ const AppRoutes = () => (
 
             <Route element={<AuthLayout />}>
                 <Route path="/login" element={<LoginComponent />} />
-                <Route path="/signup" element={<SignupComponent />} />
+                <Route path="/signup" element={<SignupEmailCaptureStep />} />
             </Route>
         </Routes>
     </Router>

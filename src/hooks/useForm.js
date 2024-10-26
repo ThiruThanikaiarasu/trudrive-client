@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { validateLoginForm, validateSignupForm } from '../utils/formValidation'
+import { validateLoginForm, validateSignupForm, validateSignupEmail } from '../utils/formValidation'
 
 
 const useForm = (initialState, onSubmit, formType) => {
@@ -10,6 +10,7 @@ const useForm = (initialState, onSubmit, formType) => {
 
     const handleChange = (event) => {
         const { name, value } = event.target
+        console.log(value)
         setFormData((prevData) => ({ ...prevData, [name]: value }))
 
         setErrors((prevErrors) => ({ ...prevErrors, [name]: null }))
@@ -21,7 +22,9 @@ const useForm = (initialState, onSubmit, formType) => {
         let validationErrors
         if( formType == 'login') {
             validationErrors = validateLoginForm(formData)
-        } 
+        } else if( formType == 'signup-email') {
+            validationErrors = validateSignupEmail(formData)
+        }
         else {
             validationErrors = validateSignupForm(formData)
         }
