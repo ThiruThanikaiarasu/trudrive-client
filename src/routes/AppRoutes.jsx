@@ -10,6 +10,8 @@ import ImageUploader from '../components/ImageUploader'
 import RecycleBinComponent from '../components/RecycleBinComponent/RecycleBinComponent'
 import MainLayout from '../layouts/MainLayout'
 import AuthLayout from '../layouts/AuthLayout'
+import SignupEmailVerification from '../pages/SignupComponent/SignupEmailVerification'
+import SignupEmailProfile from '../pages/SignupComponent/SignupEmailProfile'
 
 
 const AppRoutes = () => (
@@ -27,6 +29,8 @@ const AppRoutes = () => (
             <Route element={<AuthLayout />}>
                 <Route path="/login" element={<LoginComponent />} />
                 <Route path="/signup" element={<SignupEmailCaptureStep />} />
+                <Route path="/signup/email-verification" element={<SignupEmailVerification />} />
+                <Route path="/signup/profile" element={<SignupEmailProfile />} />
             </Route>
         </Routes>
     </Router>

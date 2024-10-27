@@ -4,6 +4,14 @@ import React, { createContext, useEffect, useState } from 'react'
 const UserContext = createContext()
 
 const UserProvider = ({ children }) => {
+
+    const [signupFormData, setSignupFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+    })
+
     const storedUserProfile = localStorage.getItem('userProfile')
     const storedIsLoggedIn = localStorage.getItem('isUserLoggedIn')
 
@@ -20,7 +28,7 @@ const UserProvider = ({ children }) => {
     }, [userProfile, isUserLoggedIn])
 
     const value = {
-        isUserLoggedIn, userProfile, setIsUserLoggedIn, setUserProfile
+        isUserLoggedIn, userProfile, setIsUserLoggedIn, setUserProfile, signupFormData, setSignupFormData
     }
 
     return (

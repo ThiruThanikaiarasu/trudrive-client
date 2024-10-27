@@ -20,8 +20,14 @@ const authService = {
         return response
     },
 
-    requestEmailVerification: async( email ) => {
-        const response = await axiosInstance.post('/request-verification', { email })
+    requestEmailVerification: async ( email ) => {
+        const response = await axiosInstance.post('/user/signup/request-verification', { email })
+
+        return response
+    },
+
+    validateOtpCode: async ( email, otp ) => {
+        const response = await axiosInstance.post('/user/signup/otp-verify', { email, otp })
 
         return response
     }
