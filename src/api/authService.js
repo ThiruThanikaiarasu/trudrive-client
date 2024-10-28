@@ -3,13 +3,13 @@ import axiosInstance from '../utils/axiosInstance'
 const authService = {
 
     login: async ({ email, password }) => {
-        const response = await axiosInstance.post('/user/login', { email, password })
+        const response = await axiosInstance.post('/auth/login', { email, password })
 
         return response
     },
 
     signup: async (formData) => {
-        const response = await axiosInstance.post('/user/signup', formData)
+        const response = await axiosInstance.post('/auth/signup', formData)
 
         return response
     },
@@ -21,13 +21,13 @@ const authService = {
     },
 
     requestEmailVerification: async ( email ) => {
-        const response = await axiosInstance.post('/user/signup/request-verification', { email })
+        const response = await axiosInstance.post('/auth/signup/request-verification', { email })
 
         return response
     },
 
     validateOtpCode: async ( email, otp ) => {
-        const response = await axiosInstance.post('/user/signup/otp-verify', { email, otp })
+        const response = await axiosInstance.post('/auth/signup/otp-verify', { email, otp })
 
         return response
     }
