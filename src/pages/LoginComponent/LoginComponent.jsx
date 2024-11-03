@@ -13,6 +13,7 @@ import Button from '../../elements/Button'
 
 function LoginComponent() {
 
+    localStorage.removeItem('email')
     const navigate = useNavigate()
 
     const { setIsUserLoggedIn, setUserProfile } = useUserContext()
@@ -70,14 +71,14 @@ function LoginComponent() {
 
             
             <div className="flex flex-col items-center w-full lg:w-1/2 max-w-md p-8 hover:shadow-xl bg-white rounded-lg shadow-lg mx-auto" style={{ border: "1px solid rgba(0, 0, 0, 0.2)" }}>
-                <h1 className="text-4xl font-bold mb-4 lg:hidden">TruDrive</h1>
+                {/* <h1 className="text-4xl font-bold mb-4 lg:hidden">TruDrive</h1> */}
                 <h1 className="text-3xl font-bold mb-6">Login</h1>
-                <form onSubmit={handleSubmit} className="w-full">
+                <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
                     <FormInputComponent
                         label="Email"
                         type="text"
                         name="email"
-                        placeholder="Email id"
+                        placeholder="Email"
                         value={formData.email}
                         onChange={handleChange}
                         error={errors.email}
