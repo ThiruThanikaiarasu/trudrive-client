@@ -20,8 +20,7 @@ function LoginComponent() {
 
     const [isSubmitting, setIsSubmitting] = useState(false)
 
-    const onSubmit = (event) => {
-            event.preventDefault()
+    const onSubmit = () => {
             setIsSubmitting(true)
             authService.login(formData)
                 .then((response) => {
@@ -58,7 +57,7 @@ function LoginComponent() {
         
     }
 
-    const { formData, errors, handleChange, handleSubmit, setErrors } = useForm( { email: '', password: '' }, onSubmit, 'login' ) 
+    const { formData, errors, handleChange, handleSubmit, setErrors } = useForm( onSubmit, 'login' ) 
 
     return (
         <div className="flex flex-col lg:flex-row h-screen w-screen justify-center items-center p-4">
@@ -70,7 +69,7 @@ function LoginComponent() {
             </div>
 
             
-            <div className="flex flex-col items-center w-full lg:w-1/2 max-w-md p-8 hover:shadow-xl bg-white rounded-lg shadow-lg mx-auto" style={{ border: "1px solid rgba(0, 0, 0, 0.2)" }}>
+            <div className="flex flex-col items-center w-full lg:w-1/2 max-w-md p-8 hover:shadow-xl bg-white rounded-lg mx-auto" style={{ border: "1px solid rgba(0, 0, 0, 0.2)" }}>
                 {/* <h1 className="text-4xl font-bold mb-4 lg:hidden">TruDrive</h1> */}
                 <h1 className="text-3xl font-bold mb-6">Login</h1>
                 <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">

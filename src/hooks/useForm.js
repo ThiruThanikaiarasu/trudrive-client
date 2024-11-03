@@ -35,6 +35,7 @@ const useForm = (onSubmit, formType) => {
         console.log(validationErrors)
         if (Object.keys(validationErrors).length === 0) {
             onSubmit(signupFormData)
+            console.log("first")
         } else {
             setErrors(validationErrors)
         }
