@@ -30,6 +30,12 @@ const authService = {
         const response = await axiosInstance.post('/auth/signup/otp-verify', { email, otp })
 
         return response
+    },
+
+    fetchAuthUserData: async () => {
+        const response = await axiosInstance.get('/google-auth/user-data')
+
+        return response
     }
 }
 

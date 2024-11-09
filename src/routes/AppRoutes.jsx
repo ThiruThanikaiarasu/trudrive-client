@@ -12,6 +12,7 @@ import MainLayout from '../layouts/MainLayout'
 import AuthLayout from '../layouts/AuthLayout'
 import SignupEmailVerification from '../pages/SignupComponent/SignupEmailVerification'
 import SignupEmailProfile from '../pages/SignupComponent/SignupEmailProfile'
+import AuthCallback from '../components/Auth/AuthCallback'
 
 
 const AppRoutes = () => (
@@ -31,6 +32,7 @@ const AppRoutes = () => (
                 <Route path="/signup" element={<SignupEmailCaptureStep />} />
                 <Route path="/signup/email-verification" element={<SignupEmailVerification />} />
                 <Route path="/signup/profile" element={<SignupEmailProfile />} />
+                <Route path="/auth/callback" element={<AuthCallback />} />
             </Route>
         </Routes>
     </Router>
